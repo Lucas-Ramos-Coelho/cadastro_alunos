@@ -4,7 +4,7 @@ document.getElementById("formAluno").addEventListener("submit", async (e) => {
   const form = document.getElementById("formAluno");
   const formData = new FormData(form);
 
-  const resposta = await fetch("https://cadastro-alunos-m7f5.onrender.com", {
+  const resposta = await fetch("https://cadastro-alunos-m7f5.onrender.com/alunos", {
     method: "POST",
     body: formData
   });
