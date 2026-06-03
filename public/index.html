@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Alunos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Cadastro de Alunos</h1>
+
+    <form id="formAluno" enctype="multipart/form-data">
+
+      <input type="text" name="nome_completo" placeholder="Nome completo" required>
+
+      <input type="text" name="usuario_acesso" placeholder="Usuário" required>
+
+      <input type="password" name="senha" placeholder="Senha" required>
+
+      <input type="email" name="email_aluno" placeholder="E-mail" required>
+
+      <textarea name="observacao" placeholder="Observação"></textarea>
+
+      <input type="file" name="foto">
+
+      <button type="submit">Cadastrar</button>
+
+    </form>
+
+    <p id="mensagem"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
