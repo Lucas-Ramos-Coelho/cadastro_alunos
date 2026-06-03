@@ -1,19 +1,28 @@
 document.getElementById("formAluno").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const form = document.getElementById("formAluno");
-  const formData = new FormData(form);
+  try {
+    const form = document.getElementById("formAluno");
+    const formData = new FormData(form);
 
-  const resposta = await fetch("https://cadastro-alunos-m7f5.onrender.com/alunos", {
-    method: "POST",
-    body: formData
-  });
+    const resposta = await fetch("https://cadastro-alunos-m7f5.onrender.com/alunos", {
+      method: "POST",
+      body: formData
+    });
 
-  const data = await resposta.json();
+    const data = await resposta.json();
 
-  document.getElementById("mensagem").innerText = data.mensagem;
+    console.log(data);
 
-  if (resposta.ok) {
-    form.reset();
+    document.getElementById("mensagem").innerText = data.mensagem;
+
+    if (resposta.ok) {
+      form.reset();
+    }
+
+  } catch (erro) {
+    console.log("ERRO NO FETCH:", erro);
+    document.getElementById("mensagem").innerText =
+      "Erro ao conectar com o servidor";
   }
 });
